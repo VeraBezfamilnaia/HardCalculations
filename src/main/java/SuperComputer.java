@@ -10,7 +10,7 @@ public class SuperComputer extends Thread {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
-            int number = in.read(); //TODO почему не читается переданное число
+            int number = Integer.parseInt(in.readLine());
             int result = Calculator.fib(number);
             out.println(result);
         } catch (IOException e) {
